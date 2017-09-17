@@ -1,48 +1,36 @@
 .drop{
-  background-color:#00BFFF ;
+
+  padding-top:12px;
+  padding-left: 9px;
+margin-top: -6px;
+
 }
 body{
-  background-color:#00BFFF ;
+  background-color:#CC00CC ;
 }
-#search-form {
-
-height: 40px;
-
-border: 1px solid #999;
-
--webkit-border-radius: 5px;
-
--moz-border-radius: 5px;
-
-border-radius: 5px;
-
-background-color: #fff;
-
-overflow: hidden;
-
+#color{
+  color: white;
+  text-align: center;
 }
-#search-text {
-
-	font-size: 14px;
-
-	color: #ddd;
-
-	border-width: 0;
-
-	background: transparent;
-
-	}
-  #search-box input[type="text"] {
-
-width: 90%;
-
-padding: 11px 0 12px 1em;
-
-color: #333;
-
-outline: none;
-
+.header{
+  background-color: #990099;
 }
-hr{
-
+.text-box{
+  inline:block;
+    padding-top: 20px;
+    padding-left: 300px;
+  margin-top: 12px;
+  margin-left: -6px;
+}
+.block{
+  inline:block;
+  margin-left: 30px;
+  padding: 15px 15px 15px 15px;
+  margin-top:-10px;
+}
+.text-search{
+  inline:block;
+}
+.btn-search{
+  inline:block;
 }

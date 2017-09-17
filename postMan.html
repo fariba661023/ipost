@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <style>
-
-#popup_searchBox {position:fixed;top:0;left:0;width:100%;height:100%;background:#000000;opacity:0.8;z-index:9999999;}
-
-#popup_searchBox{position:fixed;top:0;left:0;width:100%;height:100%;background:#000000;opacity:0.8;}
-
-#popup_searchBox_Data{position:absolute;top:50%;left:50%;width:300px;height:100px;margin:-50px 0 0 -150px;color:#FFFFFF;z-index:9999;}
-
-</style>
-
-<style>
-
-.search-form-wrapper{background:#000;background:rgba(0,0,0,.8);
-  z-index:99;
-  position:fixed;
-  width:100%;height:100%;left:0;top:0;display:none}
-.search-form,.search-form-label,.search-form-overlay,.search-text{position:absolute;left:0}.search-form{width:100%;height:1px;top:40%;text-align:center}
-.search-form-label{bottom:100%;width:100%;display:block;color:#fff;font-size:40px;font-weight:100}
-.search-text{top:100%;width:50%;right:0;margin:20px auto 0;background:0 0;border:none;border-bottom:1px dashed #ddd;font-size:60px;color:#fff;text-align:center;outline:0;min-width:300px}
-.search-form-overlay{width:100%;height:100%;top:0}
-
-</style>
     <meta charset="utf-8">
     <title>صفحه پستی من</title>
+    <!-- require link -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,62 +11,49 @@
       <link type="text/css" rel="stylesheet" href="post.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <body>
+    <!-- container -->
 <div class="col-lg-12 container">
-  <div class="col-lg-4">
+  <!-- row -->
+  <div class="col-lg-12  header">
+     <div class="row">
+       <h1 id="color">iPost</h1>
+     </div>
   </div>
-
-  <div class="col-lg-4">
-  <div ng-app="myApp" ng-controller="myCtrl">
-  <select >
-  <option ng-repeat="x in names" class="drop">{{x}}</option>
-  </select>
-  <!-- search box -->
-  <div id="search-box">
-
-<form  action="/search" id="search-form" method="get" target="_top">
-    <input onclick="document.getElementById(&#39;popup_searchBox&#39;).style.display = &#39;block&#39;;" id="search-text" name="q" placeholder="" type="text" />
+  <!-- left pannel -->
+  <div class="col-lg-3">
+    <form class="" action="http://www.google.com" method="post">
+      <input class="text-search" type="text" placeholder="search" name="search" value="جستجو کنید">
+      <input class="btn-search" type="submit"   value="search">
     </form>
-    </div>
-
-    <div id="popup_searchBox" style="display:none;">
-
-    <div id="popup_searchBox_Data">
-
-    <!-- search Box -->
-
-    <div class="search-form-wrapper" style="display: block;">
-
-    <div class="search-form-overlay"></div>
-
-    <form action="/search" class="search-form" method="get">
-
-    <label class="search-form-label">Type something and Enter <button onclick="document.getElementById('popup_searchBox').style.display = 'none';">Close</button></label>
-
-    <input class="search-text" name="q" type="text" value="">
-
-    <button class="hide search-submit" style="display:none;" type="submit"><trans>Search</trans></button>
-
-    </form>
-
-    </div>
-
-    <!-- Search Box -->
-
-    </div>
-
-    </div>
-  <input type="text" name="" value="">
   </div>
-  </div>
-  <hr>
-  <div class="col-lg-4">
+<!-- right pannel -->
+<form >
+  <div class="col-lg-8 border">
+            <!-- dropDown -->
+        <span ng-app="myApp" ng-controller="myCtrl" >
+            <select class="drop">
+            <option ng-repeat="x in names" class="drop" >{{x}}</option>
+            </select>
+        </span>
+        <!-- textBox -->
+          <span>
+              <input type="text" class="text-box">
+          </span>
+              <!-- sendButton -->
+              <span>
+                  <button type="submit" name="send" class="block ">send</button>
+              </span>
+          </div>
+          </form>
 
-  </div>
+    </div>
 </div>
+</div>
+<!-- angular code -->
   <script>
   var app = angular.module('myApp', []);
   app.controller('myCtrl', function($scope) {
-      $scope.names = ["Get", "Post", "Delete","Patch"];
+      $scope.names = ["Get", "Post", "Delete","Patch","Put"];
   });
   </script>
   </body>
